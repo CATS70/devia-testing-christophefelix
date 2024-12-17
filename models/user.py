@@ -1,6 +1,6 @@
 from models.database import db
 
-class User(db.Model):
+class Produits(db.Model):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
