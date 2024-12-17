@@ -8,4 +8,4 @@ class Produits(db.Model):
     description = db.Column(db.String(200), nullable=False)
 
     def to_dict(self):
-        return {"id": self.id, "name": self.name, "description": self.email}
+        return {"id": self.id, "name": self.name, "description": self.description}
