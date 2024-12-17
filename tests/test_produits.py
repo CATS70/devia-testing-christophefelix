@@ -41,9 +41,9 @@ class ProduitsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn("Product 1", str(response.data))
 
-    def test_delete_user(self):
+    def test_delete_produits(self):
         self.client.post("/api/produits", json={"name": "Produit 1", "description": "desc prod 1", "id":"1"})
-        response = self.client.delete("/api/users/1")
+        response = self.client.delete("/api/produits/1")
         self.assertEqual(response.status_code, 200)
         self.assertIn("User deleted successfully", str(response.data))
 
