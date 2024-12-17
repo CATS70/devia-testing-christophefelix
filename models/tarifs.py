@@ -1,6 +1,6 @@
 from models.database import db
 
-class User(db.Model):
+class Tarifs(db.Model):
     __tablename__ = "tarifs"
 
     id = db.Column(db.Integer, primary_key=True)
