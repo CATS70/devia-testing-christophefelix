@@ -45,7 +45,7 @@ class ProduitsTestCase(unittest.TestCase):
         self.client.post("/api/produits", json={"name": "Produit 1", "description": "desc prod 1", "id":"1"})
         response = self.client.delete("/api/produits/1")
         self.assertEqual(response.status_code, 200)
-        self.assertIn("User deleted successfully", str(response.data))
+        self.assertIn("Produit deleted successfully", str(response.data))
 
 if __name__ == "__main__":
     unittest.main()
