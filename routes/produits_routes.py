@@ -42,7 +42,7 @@ def update_produit(produit_id):
     db.session.commit()
     return jsonify(produit.to_dict()), 200
 
-@produits_routes.route("/users/<int:produit_id>", methods=["DELETE"])
+@produits_routes.route("/produits/<int:produit_id>", methods=["DELETE"])
 def delete_produits(produit_id):
     produit = Produits.query.get(produit_id)
     if not produit:
