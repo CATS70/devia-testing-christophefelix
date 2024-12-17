@@ -25,5 +25,5 @@ Je veux pouvoir supprimer un produit
 Afin que le produit ne puisse plus être commandé   
 Critères d'acceptation:  
 - Le code doit exister
-- Le produit ne doit pas être supprimer de la base, mais simplement flagué
+- Le produit ne doit pas être supprimé de la base, mais simplement flagué
 
