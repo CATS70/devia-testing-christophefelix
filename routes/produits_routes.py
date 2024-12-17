@@ -38,13 +38,12 @@ def update_produit(produit_id):
 
     data = request.get_json()
     produit.name = data.get("name", produit.name)
-    produit.id = data.get("id", produit.id)
     produit.description = data.get("description", produit.description)
     db.session.commit()
     return jsonify(produit.to_dict()), 200
 
 @produits_routes.route("/users/<int:produit_id>", methods=["DELETE"])
-def delete_user(produit_id):
+def delete_produits(produit_id):
     produit = Produits.query.get(produit_id)
     if not produit:
         return jsonify({"error": "Produit not found"}), 404
