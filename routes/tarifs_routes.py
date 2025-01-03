@@ -25,14 +25,14 @@ def create_tarif():
     if Tarifs.query.filter_by(id=data["id"]).first():
         return jsonify({"error": "id already exists"}), 400
 
-    new_tarif = Tarifs(name=data["name"], id=data["id"], description=data["tarif"])
+    new_tarif = Tarifs(name=data["name"], id=data["id"], tarif=data["tarif"])
     db.session.add(new_tarif)
     db.session.commit()
     return jsonify(new_tarif.to_dict()), 201
 
 @tarifs_routes.route("/tarifs/<int:tarif_id>", methods=["PUT"])
-def update_tarif(Tarif_id):
-    tarif = Tarifs.query.get(Tarif_id)
+def update_tarif(tarif_id):
+    tarif = Tarifs.query.get(tarif_id)
     if not tarif:
         return jsonify({"error": "id  Tarif not found"}), 404
 
