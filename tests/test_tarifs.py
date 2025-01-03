@@ -35,13 +35,13 @@ class TarifsTestCase(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertIn("tarif 1", str(response.data))
 
-    def test_update_produit(self):
+    def test_update_tarif(self):
         self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.put("/api/tarifs/1", json={"name": "Tarif 1"})
         self.assertEqual(response.status_code, 200)
         self.assertIn("Tarif 1", str(response.data))
 
-    def test_delete_produits(self):
+    def test_delete_tarifs(self):
         self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.delete("/api/tarifs/1")
         self.assertEqual(response.status_code, 200)
