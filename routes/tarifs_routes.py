@@ -39,7 +39,7 @@ def update_tarif(tarif_id):
     data = request.get_json()
     tarif.name = data.get("name", tarif.name)
     tarif.id = data.get("id", tarif.id)
-    tarif.description = data.get("description", tarif.description)
+    tarif.tarif = data.get("tarif", tarif.tarif)
     db.session.commit()
     return jsonify(tarif.to_dict()), 200
 
