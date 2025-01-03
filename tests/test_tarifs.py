@@ -1,7 +1,7 @@
 import unittest
 from app import create_app
 from models.database import db
-from models.produits import Produits
+from models.tarifs import Tarifs
 
 class TarifsTestCase(unittest.TestCase):
     def setUp(self):
@@ -24,25 +24,25 @@ class TarifsTestCase(unittest.TestCase):
         self.assertIn("tarif 1", str(response.data))
 
     def test_get_tarifs(self):
-        self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
+        self.client.post("/api/tarifs", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.get("/api/tarifs")
         self.assertEqual(response.status_code, 200)
         self.assertIn("tarif 1", str(response.data))
 
     def test_get_tarif(self):
-        self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
+        self.client.post("/api/tarifs", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.get("/api/tarifs/1")
         self.assertEqual(response.status_code, 200)
         self.assertIn("tarif 1", str(response.data))
 
     def test_update_tarif(self):
-        self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
+        self.client.post("/api/tarifs", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.put("/api/tarifs/1", json={"name": "Tarif 1"})
         self.assertEqual(response.status_code, 200)
         self.assertIn("Tarif 1", str(response.data))
 
     def test_delete_tarifs(self):
-        self.client.post("/api/produits", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
+        self.client.post("/api/tarifs", json={"name": "tarif 1", "tarif": 1.11, "id":"1"})
         response = self.client.delete("/api/tarifs/1")
         self.assertEqual(response.status_code, 200)
         self.assertIn("Tarif deleted successfully", str(response.data))
