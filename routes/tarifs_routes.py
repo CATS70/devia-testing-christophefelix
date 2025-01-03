@@ -43,8 +43,8 @@ def update_tarif(tarif_id):
     db.session.commit()
     return jsonify(tarif.to_dict()), 200
 
-@tarifs_routes.route("/users/<int:tarif_id>", methods=["DELETE"])
-def delete_user(tarif_id):
+@tarifs_routes.route("/tarifs/<int:tarif_id>", methods=["DELETE"])
+def delete_tarif(tarif_id):
     tarif = Tarifs.query.get(tarif_id)
     if not tarif:
         return jsonify({"error": "Tarif not found"}), 404
