@@ -8,4 +8,4 @@ class Tarifs(db.Model):
     tarif = db.Column(db.Float, nullable=False)
 
     def to_dict(self):
-        return {"id": self.id, "name": self.name, "tarif": self.email}
+        return {"id": self.id, "name": self.name, "tarif": self.tarif}
