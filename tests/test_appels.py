@@ -19,5 +19,10 @@ class AppelsTestCase(unittest.TestCase):
             db.drop_all()
 
     def test_existence_data(self):
-        data = Appels("felix@yo.fr","mon appel en clair")
+        data = Appels(email = "felix@yo.fr",message = "mon appel en clair")
 
+        self.assertEqual(data.email,"felix@yo.fr")
+        self.assertEqual(data.message,"mon appel en clair")
+
+if __name__ == "__main__":
+    unittest.main()
