@@ -21,6 +21,7 @@ class AppelsTestCase(unittest.TestCase):
     def test_existence_data(self):
         data = Appels(email = "felix@yo.fr",message = "mon appel en clair")
 
+        self.assertIsNotNone(data.id)
         self.assertEqual(data.email,"felix@yo.fr")
         self.assertEqual(data.message,"mon appel en clair")
 
