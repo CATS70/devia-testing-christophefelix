@@ -17,3 +17,7 @@ class AppelsTestCase(unittest.TestCase):
         with self.app.app_context():
             db.session.remove()
             db.drop_all()
+
+    def test_existence_data(self):
+        data = Appels("felix@yo.fr","mon appel en clair")
+
